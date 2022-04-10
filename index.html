@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div id="intro">
@@ -29,12 +30,8 @@
         <div id="qn4Button" onclick="submitQn4()"><button>Submit Qn4</button></div>
     </div>
 
-    <style>
-        #intro {text-align: center; color: floralwhite;}
-         #greetingInput {text-align: center; color: floralwhite;}
-         #quiz {text-align: center; color: floralwhite;}
-        body {background-color: darkslategray;}
-       </style>
+    
+    
  
 
    <script>
@@ -66,20 +63,20 @@
           ]
       
        let aAnswerList = ["Cascading Style Sheet", "Consumer Storgage Space", "Cover Space Science", "Constant Style Sheet"]
-       let bAnswerList = ["website", "app", "server", "terminal"]
-       let cAnswerList = ["making it pretty", "it works", "its fast", "it's mobile friendly"]
-       let dAnswerList = ["1978", "1995", "2019", "1949"]
+       let bAnswerList = ["app", "website", "server", "terminal"]
+       let cAnswerList = ["making it pretty", "is fast", "it works", "it's mobile friendly"]
+       let dAnswerList = ["1978", "1999", "2019", "1995"]
 
-
-
-
-       
 
         quiz.style.display = "none";
         qn1Button.style.display = "none";       
         qn2Button.style.display = "none";
         qn3Button.style.display = "none";
         qn4Button.style.display = "none";
+
+       
+
+       
        
 
        function greeting() {
@@ -88,8 +85,7 @@
            greetingInput.style.display = "none"
            quiz.style.display = "block";
             qn1Button.style.display = "block";
-          
-            question.innerHTML = questionList[interationNumber];
+           question.innerHTML = questionList[interationNumber];
            answerA.innerHTML = aAnswerList[interationNumber];
            answerB.innerHTML = bAnswerList[interationNumber];
            answerC.innerHTML = cAnswerList[interationNumber];
@@ -104,25 +100,25 @@
             qnChoice = "a";
         }
         function bFunction() {
-            answerA.style.color = "red";
-            answerB.style.color = "floralwhite";
+            answerA.style.color = "floralwhite";
+            answerB.style.color = "red";
             answerC.style.color = "floralwhite";
             answerD.style.color = "floralwhite";
-            qnChoice = "a";
+            qnChoice = "b";
         }
         function cFunction() {
             answerA.style.color = "floralwhite";
-            answerB.style.color = "red";
-            answerC.style.color = "floralwhite";
+            answerB.style.color = "floralwhite";
+            answerC.style.color = "red";
             answerD.style.color = "floralwhite";
-            qnChoice = "b";
+            qnChoice = "c";
         }
         function dFunction() {
             answerA.style.color = "floralwhite";
-            answerB.style.color = "red";
+            answerB.style.color = "floralwhite";
             answerC.style.color = "floralwhite";
-            answerD.style.color = "floralwhite";
-            qnChoice = "b";
+            answerD.style.color = "red";
+            qnChoice = "d";
         }
         function submitQn1() {
             if (qnChoice == "a") {
@@ -172,7 +168,9 @@
             if (qnChoice == "c") {
                 score += 1;
             }
-           interationNumber += 1;
+           
+            interationNumber += 1;
+          
            qn3Button.style.display = "none";
            qn4Button.style.display = "block";
 
@@ -192,7 +190,8 @@
                 score += 1;
             }
            interationNumber += 1;
-           headerText.innerHTML = "your score is " + score;
+           
+          headerText.innerHTML = "your score is " + score;
           quiz.style.display = "none";
             answerA.style.color = "floralwhite";
             answerB.style.color = "floralwhite";
@@ -204,10 +203,11 @@
            answerC.innerHTML = cAnswerList[interationNumber];
            answerD.innerHTML = dAnswerList[interationNumber];
         }
+        
       
 
                
-
+ 
 
    </script>
 </body>
