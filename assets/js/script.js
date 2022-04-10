@@ -1,40 +1,46 @@
 //add my variables i will need 
+/*var quizData = [
+    {
+    question: "Which one is a boolean value?",
+        a: "?",
+        b: "%",
+        c: "<",
+        d: "@",
+        correct: "c",
+    },
+    {
+        question: "What is CSS?",
+         a: "Cascading style sheet", 
+         b: "Control synax system", 
+         c: "Copy send save",
+         d: "none of the above",
+         correct: "a",
+    },
+    {
+        question: "What is html?",
+        a: "Website",
+        b: "app",
+        c: "browser",
+        d: "server",
+        correct: "a",
+    },
+    {
+        question: "What is most important to a programmer?",
+        a: "Pretty",
+        b: "Easy to read",
+        c: "it works",
+        d: "The format",
+        correct: "c",
 
-var startButton = document.getElementById('start-btn')
+    },
+    {
+        question: "What year did Java script start?",
+        a: "1992",
+        b: "1978",
+        c: "1987",
+        d: "1995",
+        correct: "d",
 
+    },
 
-
-
-// add an event listener for the start button
-
-startButton.addEventListener('click', startButton) 
-    console.log('yay')
-    startButton.classList.list.add('hide')
-
-
-    //add start game function
-    function startGame ()
-
-//start a timer when i click that button
-
-
-//have a question pop up when the timer starts
-
-
-
-//when i answer the question another one pops up 
-
-
-//make it to where if i answer the question incorrectly it subracts time from the clock 
-
-
-
-//when timer reaches 0 or all questions answered END THE GAME
-
-
-
-//use local storage to save scores
-
-
-//have my 5 questions..... 1.  What is 
-
+];*/

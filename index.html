@@ -1,33 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8"  />
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    
-        <script defer src="./assets/js/script.js"></script>
-<title>Web Quiz</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Quiz</title>
+</head>
 <body>
- <div class="container">
-     <div id="question-container" class="hide">
-         <div id="question">Question</div>
-         <div id="answer-buttons" class="btn-grid">
-             <button class="btn">Answer 1</button>
-             <button class="btn">Answer 2</button>
-             <button class="btn">Answer 3</button>
-             <button class="btn">Answer 4</button>
+    <div id="intro">
+    <h1>Welcome to my quiz</h1>
+    <h2 id="headerText">What is your name?</h2> <br>
+    </div>
+
+    <div id="greetingInput">
+        <input id="userName"> <br><br>
+        <button onclick="greeting()">Submit</button>
+    </div>
+    <div id="quiz">
+        <h3 id="question"></h3>
+        <div id="answerA"onclick="aFunction()"></div>
+        <div id="answerB" onclick="bFunction()"></div>
+        <div id="answerC" onclick="cFunction()"></div>
+        <div id="answerD" onclick="dFunction()"></div> <br>
+
+        <div id="qn1Button" onclick="submitQn1()"><button>Submit Qn1</button></div>
+        <div id="qn2Button" onclick="submitQn2()"><button>Submit Qn2</button></div>
+        <div id="qn3Button" onclick="submitQn3()"><button>Submit Qn3</button></div>
+        <div id="qn4Button" onclick="submitQn4()"><button>Submit Qn4</button></div>
+    </div>
+
+    <style>
+        #intro {text-align: center; color: floralwhite;}
+         #greetingInput {text-align: center; color: floralwhite;}
+         #quiz {text-align: center; color: floralwhite;}
+        body {background-color: darkslategray;}
+       </style>
+ 
+
+   <script>
+       var userName = document.querySelector("#userName");
+       var headerText = document.querySelector("#headerText");
+       var greetingInput = document.querySelector("#greetingInput");
+       var quiz = document.querySelector("#quiz");
+       var qn1Button= document.querySelector("#qn1Button");
+       var qn2Button = document.querySelector("#qn2Button");
+       var qn3Button = document.querySelector("#qn3Button");
+       var qn4Button = document.querySelector("#qn4Button");
+       var question = document.querySelector("#question");
+       var answerA = document.querySelector("#answerA");
+       var answerB = document.querySelector("#answerB");
+       var answerC = document.querySelector("#answerC");
+       var answerD = document.querySelector("#answerD");
+       var interationNumber = 0;
+       var qnChoice = "";
+       let score = 0;
+      
+      
+      
+      
+       let questionList = [
+            "Qn1: What is CSS?",
+            "Qn2: What is HTML",
+            "Qn3: What is most important to a programmer?",
+            "Qn4: What year did Javascript start?",
+          ]
+      
+       let aAnswerList = ["Cascading Style Sheet", "Consumer Storgage Space", "Cover Space Science", "Constant Style Sheet"]
+       let bAnswerList = ["website", "app", "server", "terminal"]
+       let cAnswerList = ["making it pretty", "it works", "its fast", "it's mobile friendly"]
+       let dAnswerList = ["1978", "1995", "2019", "1949"]
+
+
+
+
+       
+
+        quiz.style.display = "none";
+        qn1Button.style.display = "none";       
+        qn2Button.style.display = "none";
+        qn3Button.style.display = "none";
+        qn4Button.style.display = "none";
+       
+
+       function greeting() {
+           headerText.innerHTML = ""
+           headerText.innerHTML = "Hello " + userName.value + ", Welcome to my Quiz";
+           greetingInput.style.display = "none"
+           quiz.style.display = "block";
+            qn1Button.style.display = "block";
+          
+            question.innerHTML = questionList[interationNumber];
+           answerA.innerHTML = aAnswerList[interationNumber];
+           answerB.innerHTML = bAnswerList[interationNumber];
+           answerC.innerHTML = cAnswerList[interationNumber];
+           answerD.innerHTML = dAnswerList[interationNumber];
+        }
+
+        function aFunction() {
+            answerA.style.color = "red";
+            answerB.style.color = "floralwhite";
+            answerC.style.color = "floralwhite";
+            answerD.style.color = "floralwhite";
+            qnChoice = "a";
+        }
+        function bFunction() {
+            answerA.style.color = "red";
+            answerB.style.color = "floralwhite";
+            answerC.style.color = "floralwhite";
+            answerD.style.color = "floralwhite";
+            qnChoice = "a";
+        }
+        function cFunction() {
+            answerA.style.color = "floralwhite";
+            answerB.style.color = "red";
+            answerC.style.color = "floralwhite";
+            answerD.style.color = "floralwhite";
+            qnChoice = "b";
+        }
+        function dFunction() {
+            answerA.style.color = "floralwhite";
+            answerB.style.color = "red";
+            answerC.style.color = "floralwhite";
+            answerD.style.color = "floralwhite";
+            qnChoice = "b";
+        }
+        function submitQn1() {
+            if (qnChoice == "a") {
+                score += 1;
+            }
+                interationNumber += 1;
+           qn1Button.style.display = "none";
+           qn2Button.style.display = "block";
             
-    </div>
- </div>
- <div class="controls">
-     <button id="start-btn" class="start-btn btn">Start</button>
-     <button id="next-btn" class="next-btn btn hide">Next</button>
-    </div>
-    </div>
+           answerA.style.color = "floralwhite";
+            answerB.style.color = "floralwhite";
+            answerC.style.color = "floralwhite";
+            answerD.style.color = "floralwhite";
+
+           question.innerHTML = questionList[interationNumber];
+           answerA.innerHTML = aAnswerList[interationNumber];
+           answerB.innerHTML = bAnswerList[interationNumber];
+           answerC.innerHTML = cAnswerList[interationNumber];
+           answerD.innerHTML = dAnswerList[interationNumber];
+           }
+           
+           
+            function submitQn2() {
+            if (qnChoice == "b") {
+                score += 1;
+            }
+           interationNumber += 1;
+           
+           qn2Button.style.display = "none";
+           qn3Button.style.display = "block";
+           
+           answerA.style.color = "floralwhite";
+            answerB.style.color = "floralwhite";
+            answerC.style.color = "floralwhite";
+            answerD.style.color = "floralwhite";
+          
+          
+           question.innerHTML = questionList[interationNumber];
+           answerA.innerHTML = aAnswerList[interationNumber];
+           answerB.innerHTML = bAnswerList[interationNumber];
+           answerC.innerHTML = cAnswerList[interationNumber];
+           answerD.innerHTML = dAnswerList[interationNumber];
+           }
+     
+           
+            function submitQn3() {
+            if (qnChoice == "c") {
+                score += 1;
+            }
+           interationNumber += 1;
+           qn3Button.style.display = "none";
+           qn4Button.style.display = "block";
+
+            answerA.style.color = "floralwhite";
+            answerB.style.color = "floralwhite";
+            answerC.style.color = "floralwhite";
+            answerD.style.color = "floralwhite";
+
+           answerA.innerHTML = aAnswerList[interationNumber];
+           answerB.innerHTML = bAnswerList[interationNumber];
+           answerC.innerHTML = cAnswerList[interationNumber];
+           answerD.innerHTML = dAnswerList[interationNumber];
+        }
+      
+        function submitQn4() {
+            if (qnChoice == "d") {
+                score += 1;
+            }
+           interationNumber += 1;
+           headerText.innerHTML = "your score is " + score;
+          quiz.style.display = "none";
+            answerA.style.color = "floralwhite";
+            answerB.style.color = "floralwhite";
+            answerC.style.color = "floralwhite";
+            answerD.style.color = "floralwhite";
+
+           answerA.innerHTML = aAnswerList[interationNumber];
+           answerB.innerHTML = bAnswerList[interationNumber];
+           answerC.innerHTML = cAnswerList[interationNumber];
+           answerD.innerHTML = dAnswerList[interationNumber];
+        }
+      
+
+               
 
 
-
+   </script>
 </body>
 </html>
+           
